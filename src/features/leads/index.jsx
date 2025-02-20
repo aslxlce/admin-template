@@ -70,9 +70,9 @@ function Leads() {
                                     <tr key={k}>
                                         <td>
                                             <div className="flex items-center space-x-3">
-                                                <div className="avatar">
+                                                <div>
                                                     <div className="mask mask-squircle h-12 w-12">
-                                                        <img src={l.image} alt="Avatar" />
+                                                        <img src={l.image} alt="" />
                                                     </div>
                                                 </div>
                                                 <div>
