@@ -68,14 +68,7 @@ function AddLeadModalBody({ closeModal }) {
                 labelTitle="Category"
                 updateFormValue={updateFormValue}
             />
-            <InputText
-                type="text"
-                defaultValue={leadObj.image}
-                updateType="image"
-                containerStyle="mt-4"
-                labelTitle="image"
-                updateFormValue={updateFormValue}
-            />
+            <input type="file" className="file-input my-8" />
 
             {/* <InputText type="email" defaultValue={leadObj.email} updateType="email" containerStyle="mt-4" labelTitle="Email Id" updateFormValue={updateFormValue}/> */}
 
