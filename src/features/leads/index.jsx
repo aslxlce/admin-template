@@ -32,15 +32,8 @@ function Leads() {
 
     useEffect(() => {
         dispatch(getLeadsContent());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
-    const getDummyStatus = (index) => {
-        if (index % 5 === 0) return <div className="badge">Not Interested</div>;
-        else if (index % 5 === 1) return <div className="badge badge-primary">In Progress</div>;
-        else if (index % 5 === 2) return <div className="badge badge-secondary">Sold</div>;
-        else if (index % 5 === 3) return <div className="badge badge-accent">Need Followup</div>;
-        else return <div className="badge badge-ghost">Open</div>;
-    };
 
     const deleteCurrentLead = (index) => {
         dispatch(
@@ -66,7 +59,9 @@ function Leads() {
                             <tr>
                                 <th>Name</th>
                                 <th>Descripton</th>
-                                <th></th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,21 +71,20 @@ function Leads() {
                                         <td>
                                             <div className="flex items-center space-x-3">
                                                 <div className="avatar">
-                                                    {/* <div className="mask mask-squircle h-12 w-12">
-                                                        <img src={l.avatar} alt="Avatar" />
-                                                    </div> */}
+                                                    <div className="mask mask-squircle h-12 w-12">
+                                                        <img src={l.image} alt="Avatar" />
+                                                    </div>
                                                 </div>
                                                 <div>
-                                                    <div className="font-bold">{l.first_name}</div>
-                                                    <div className="text-sm opacity-50">
-                                                        {l.last_name}
-                                                    </div>
+                                                    <div className="font-bold">{l.name}</div>
                                                 </div>
                                             </div>
                                         </td>
 
                                         {/* <td>{getDummyStatus(k)}</td> */}
-                                        <td>{l.last_name}</td>
+                                        <td>{l.description}</td>
+                                        <td>{l.price}</td>
+                                        <td>{l.category}</td>
                                         <td>
                                             <button
                                                 className="btn btn-square btn-ghost"
